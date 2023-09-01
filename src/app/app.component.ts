@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'SuperCarteInfini';
+
+  form = this.fb.group({
+    email: ['', [Validators.required, Validators.email]],
+    name: ['',[Validators.required]],
+  });
+
+  constructor(private fb: FormBuilder) { }
 }
