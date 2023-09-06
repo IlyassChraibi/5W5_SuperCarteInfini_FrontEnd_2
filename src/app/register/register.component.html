@@ -4,16 +4,16 @@
     <form>
 
       <mat-form-field style="width: 100%">
-        <input matInput type="email" placeholder="Courriel" name="email">
+        <input matInput type="email" placeholder="Nom" name="nom" [(ngModel)]="nom">
       </mat-form-field>
 
       <mat-form-field style="width: 100%">
-        <input matInput [type]="hidePassword ? 'password' : 'text'" placeholder="Mot de passe" name="pass">
+        <input matInput [type]="hidePassword ? 'password' : 'text'" placeholder="Mot de passe" name="pass" [(ngModel)]="password">
         <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
       </mat-form-field>
 
       <mat-form-field style="width: 100%">
-        <input matInput [type]="hideConfirmation ? 'password' : 'text'" placeholder="Confirmation du mot de passe" name="conf">
+        <input matInput [type]="hideConfirmation ? 'password' : 'text'" placeholder="Confirmation du mot de passe" name="conf" [(ngModel)]="passwordConf">
         <mat-icon matSuffix (click)="hideConfirmation = !hideConfirmation">{{hideConfirmation ? 'visibility_off' : 'visibility'}}</mat-icon>
       </mat-form-field>
 
@@ -21,6 +21,6 @@
 
     </form>
   </mat-card>
-  <button mat-raised-button [routerLink]="['/login']" color="accent">Connecter</button>
+  <button mat-raised-button (click)="connect()" color="accent">Connecter</button>
 
 </div>

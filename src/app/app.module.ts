@@ -8,6 +8,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+// import { ApiInterceptor } from './api.interceptor';
+
 
 
 @NgModule({
@@ -24,9 +27,10 @@ import { RegisterComponent } from './register/register.component';
     MatInputModule,
     MatCardModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  // providers: [{ provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
