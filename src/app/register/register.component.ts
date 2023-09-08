@@ -10,6 +10,9 @@ export class RegisterComponent {
   password: string = '';
   confirmPassword: string = '';
 
+  hidePassword = true;
+  hideConfirmation = true;
+
   constructor(private http: HttpClient) {}
 
   register() {
